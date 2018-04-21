@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+     <title>上传图片预览示例一</title>
+     <meta name="author" content="熊仔其人-2017年3月3日" />
+     <meta name="keywords" content="" />
+     <meta name="description" content="示例一展示了前端图片上传预览基本功能的实现" />
+     <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <!-- img src="{% static '/images/img.jpg' %}"/ -->
+    <script type="text/javascript">
+    function Update()
+    {            
+        var im=document.getElementById("img");
+        im.style.display="block";
+        im.src=document.getElementById("file").value;
+    }
+    </script>
+
+    <form name="form1">
+        <input id="img" type="image" width="500px" height="500px" name="updateArea" style="display:none" />
+        <input id="file" type="file" onChange="Update()" name="fileSrc" />
+        <input type="button" value="submit" />
+    </form>
+   
+    <form id="Form1" method="post" enctype="multipart/form-data">
+         <input id="file_upload" type="file" accept="image/jpeg,image/png,image/gif" />
+         <div class="image_container">
+             <img id="preview" style="height:130px;width:117px;border-width:0px;" />
+         </div>
+     </form>
+ 
+     <script type="text/javascript">
+         $(function () {
+             $("#file_upload").change(function () {
+                 var $file = $(this);
+                 var fileObj = $file[0];
+                 var windowURL = window.URL || window.webkitURL;
+                 var dataURL;
+                 var $img = $("#preview");
+ 
+                 if (fileObj && fileObj.files && fileObj.files[0]) {
+                     dataURL = windowURL.createObjectURL(fileObj.files[0]);
+                     $img.attr('src', dataURL);
+                 } else {
+                     dataURL = $file.val();
+                     var imgObj = document.getElementById("preview");
+                     imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                     imgObj.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = dataURL;
+ 
+                 }
+             });
+         });
+     </script>
+
+
+</body>
+</html>

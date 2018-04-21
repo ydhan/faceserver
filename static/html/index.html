@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>人脸识别开放平台</title>
+  <meta name="keywords" content="人脸检测与分析、多人脸检测、五官定位、人脸对比、跨年龄人脸识别、人脸搜索、人脸识别">
+  <meta name="description" content="对图片和视频源中面部特征进行提取分析。可实现多人脸、跨年龄的人脸识别对比，涵盖人脸检测与分析、五官定位、人脸对比与搜索、跨年龄人脸识别等，为安防监控、人脸美化、智能相册分类等应用场景提供有力的技术支持。">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+
+  <link rel="stylesheet" href="https://yyb.gtimg.com/ai/common/css/global-75a9f73df9.css?max_age=31536000">
+
+  <link rel="stylesheet" href="https://yyb.gtimg.com/ai/page/product/face/index-e81692d77b.css?max_age=31536000">
+</head>
+<body>
+<div class="demo">
+    <div class="layout">
+      <h1>功能体验</h1>
+      <div class="demo-tab">
+        <div class="demo-tab-wrap">
+          <a href="javascript:void(0);" class="demo-tab-1 jmod-demo-tab cur" data-id="1">人脸检测与分析</a>
+          <a href="javascript:void(0);" class="demo-tab-5 jmod-demo-tab" data-id="5">多人脸检测</a>
+          <a href="javascript:void(0);" class="demo-tab-2 jmod-demo-tab" data-id="2">人脸对比</a>
+          <a href="javascript:void(0);" class="demo-tab-6 jmod-demo-tab" data-id="6">跨年龄人脸识别</a>
+          <a href="javascript:void(0);" class="demo-tab-3 jmod-demo-tab" data-id="3">人脸搜索</a>
+          <a href="javascript:void(0);" class="demo-tab-4 jmod-demo-tab" data-id="4">五官定位</a>
+        </div>
+      </div>
+
+      <!-- 人脸分析 -->
+      <div class="tab-cont jmod-face-detect" style="display: block;">
+        <div class="demo-opt demo-box jmod-uploader-wrapper"><div class="img-preview jmod-preview" id="preview">
+  <label>原始图片</label>
+  <img src="//yyb.gtimg.com/aiplat/static/ai-demo/large/f-1.jpg">
+  <p class="err-tip jmod-err-tip"></p>
+  <div class="jmod-img-result" style="display:inline-block;"></div>
+</div>
+<div class="form-row">
+  <span class="btn btn-upload jmod-upload-disable disabled hidden">本地上传</span>
+  <input type="file" name="file" id="file_1" class="inputfile jmod-file">
+  <label for="file_1" class="btn btn-upload jmod-upload">本地上传</label>
+  <label>或</label>
+  <span class="imgurl">
+    <div class="ui-input">
+      <input type="text" class="jmod-network-url" placeholder="输入网络图片URL">
+      <div class="ui-input-bg"></div>
+    </div>
+    <a href="javascript:void(0);" class="btn btn-test jmod-detect">检测</a>
+  </span>
+</div>
+<p class="tips">提示：图片大小不超过1M，请保证需要识别部分为图片主体部分</p>
+</div>
+        <div class="demo-rs demo-box jmod-result-wrapper"><div class="jmod-result">
+</div>
+<div class="ui-loading jmod-result-loading hidden">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+</div>
+     </div>
+
+      <!-- 多人脸分析 -->
+      <div class="tab-cont jmod-multi-face" style="display: none;">
+        <div class="demo-opt demo-box jmod-uploader-wrapper"></div>
+        <div class="demo-rs demo-box jmod-result-wrapper"></div>
+      </div>
+
+      <!-- 人脸对比 -->
+      <div class="tab-cont jmod-face-compare" style="display: none;">
+        <div style="position: relative;">
+          <div class="demo-opt demo-box compare jmod-uploader-left" style="margin-right:18px;">
+          </div>
+          <div class="demo-opt demo-box compare jmod-uploader-right">
+          </div>
+          <div class="ui-loading jmod-result-loading hidden" style="top: 40%;">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div class="compare-result jmod-compare-result" style="display: none;"><p>相似度:85%</p></div>
+
+        <div class="compare-row">
+          <a href="javascript:void(0);" class="btn-compare jmod-compare-btn">人脸比对</a>
+        </div>
+      </div>
+
+      <!-- 跨年龄人脸识别 -->
+      <div class="tab-cont jmod-age-compare" style="display: none;">
+        <div style="position: relative;">
+          <div class="demo-opt demo-box compare jmod-uploader-left" style="margin-right:18px;">
+          </div>
+          <div class="demo-opt demo-box compare jmod-uploader-right">
+          </div>
+          <div class="ui-loading jmod-result-loading hidden" style="top: 40%;">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div class="compare-result jmod-compare-result" style="display: none;"><p>相似度:85%</p></div>
+
+        <div class="compare-row">
+          <a href="javascript:void(0);" class="btn-compare jmod-compare-btn">人脸识别</a>
+        </div>
+      </div>
+
+      <!-- 人脸搜索 -->
+      <div class="tab-cont jmod-face-search" style="display: none;">
+        <div class="demo-opt demo-box jmod-uploader-wrapper">
+        </div>
+        <!-- 人脸搜索请加上face-search类名 -->
+        <div class="demo-rs demo-box face-search jmod-result-wrapper">
+        </div>
+      </div>
+
+      <!-- 五官定位 -->
+      <div class="tab-cont jmod-face-shape" style="display: none;">
+        <div class="demo-opt demo-box jmod-uploader-wrapper">
+        </div>
+        <div class="demo-rs demo-box jmod-result-wrapper">
+        </div>
+      </div>
+
+    </div>
+</div>
+<!-- 
+<h1>{{ hello }}</h1>
+<p><img src="/static/images/img.jpg"  width="180" height="180"></p>
+<p><img src="/static/images/img_detected.jpg"  width="180" height="180"></p>
+-->
+</body>
+</html>
