@@ -25,7 +25,7 @@ SECRET_KEY = '!b02m&dd3q7oh5rx6m)m$in+v$+fhxxov8c%7oq(wnepj_m#1b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [u'192.168.0.156']
+ALLOWED_HOSTS = [u'192.168.0.156',u'ds-tools.ai']
 
 
 # Application definition
